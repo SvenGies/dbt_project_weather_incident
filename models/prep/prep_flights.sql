@@ -18,4 +18,4 @@ WITH flights_cleaned AS(
             ,diverted
     FROM {{ref('staging_flights')}}
 )
-SELECT * FROM flights_cleaned
+SELECT * FROM flights_cleaned;
