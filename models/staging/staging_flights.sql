@@ -1,3 +1,4 @@
 SELECT 
-* 
-FROM s_svengiesbrecht.flights_filtered ff 
+*
+FROM s_svengiesbrecht.flights_all ff 
+WHERE origin IN ('MSY', 'BTR', 'MIA')
