@@ -8,6 +8,5 @@ WITH airports_reorder AS (
            ,dst
            ,city
     FROM {{ref('staging_airports')}}
-    WHERE faa IN ('MSY', 'BTR', 'MIA')
 )
 SELECT * FROM airports_reorder
