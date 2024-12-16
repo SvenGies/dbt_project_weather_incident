@@ -6,7 +6,7 @@ sources:
   tables:
     - name: weather_daily_raw
 
-- name: staging_flights
+- name: staging_flights_all
   schema: s_svengiesbrecht
   tables:
     - name: flights
