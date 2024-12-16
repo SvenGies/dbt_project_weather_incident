@@ -9,5 +9,5 @@ sources:
 - name: staging_flights_all
   schema: s_svengiesbrecht
   tables:
-    - name: flights
+    - name: flights_all
     - name: airports
