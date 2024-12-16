@@ -1,1 +1,1 @@
-SELECT * FROM s_svengiesbrecht.airports sa 
+SELECT * FROM public.airports sa 
