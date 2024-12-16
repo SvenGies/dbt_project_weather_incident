@@ -8,8 +8,7 @@ WITH departure AS (
 		,sum(CASE WHEN cancelled = 0 THEN 1 end) AS dep_occ_tot
 		,count(DISTINCT tail_number) AS dep_tail
 		,count(DISTINCT airline) AS dep_nunique_airlines
-	--FROM {{ref('prep_flights')}}
-	FROM prep_flights pf 
+	FROM {{ref('prep_flights')}}
 	GROUP BY origin
 ), arrival AS (
 	SELECT 
@@ -21,8 +20,7 @@ WITH departure AS (
 		,sum(CASE WHEN cancelled = 0 THEN 1 end) AS arr_occ_tot
 		,count(DISTINCT tail_number) AS arr_tail
 		,count(DISTINCT airline) AS arr_nunique_airlines
-	--FROM {{ref('prep_flights')}} 
-	FROM prep_flights pf 
+	FROM {{ref('prep_flights')}} 
 	GROUP BY dest
 ), airport_tot_stat AS (
 	SELECT 
@@ -45,7 +43,6 @@ SELECT
 	,a."name" 
 	,ats.*
 FROM airport_tot_stat AS ats
---LEFT JOIN {{ref('prep_airports')}} a 
-LEFT JOIN prep_airports a
+LEFT JOIN {{ref('prep_airports')}} a 
 USING (faa)
 WHERE faa IN ('MSY', 'BTR', 'MIA')
