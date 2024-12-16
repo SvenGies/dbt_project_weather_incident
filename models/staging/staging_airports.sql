@@ -1,3 +1,3 @@
 {{ config(materialized='view') }}
 
-SELECT * FROM s_svengiesbrecht.staging_airports sa 
+SELECT * FROM s_svengiesbrecht.airports sa 
