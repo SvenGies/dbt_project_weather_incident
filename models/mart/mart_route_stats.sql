@@ -35,3 +35,4 @@ JOIN {{ref('prep_airports')}} pa_o
   ON faa_o = pa_o.faa
 JOIN {{ref('prep_airports')}} pa_d
   ON faa_d = pa_d.faa
+WHERE s.faa_o IN ('MSY', 'BTR', 'MIA') OR s.faa_d IN ('MSY', 'BTR', 'MIA')
