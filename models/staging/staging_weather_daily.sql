@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 WITH daily_raw AS (
     SELECT
             airport_code,
