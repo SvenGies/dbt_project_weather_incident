@@ -38,8 +38,7 @@ WITH departure AS (
 	USING (faa)
 )
 SELECT
-	a.country 
-	,a.city 
+	a.city 
 	,a."name" 
 	,ats.*
 FROM airport_tot_stat AS ats
