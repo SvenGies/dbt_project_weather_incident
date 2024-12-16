@@ -1,6 +1,7 @@
 WITH stats AS (
 SELECT 
-	origin AS faa_o
+	flight_date
+	,origin AS faa_o
 	,dest AS faa_d
 	,count(*) AS total_flights
 	,count(DISTINCT tail_number) AS nunique_tail_nr
@@ -12,10 +13,11 @@ SELECT
 	,sum(cancelled) AS cancelled_tot
 	,sum(diverted) AS diverted_tot
 FROM {{ref('prep_flights')}} pf 
-GROUP BY origin, dest
+GROUP BY origin, dest, flight_date
 )
-select
-	s.faa_o AS origin
+SELECT
+	s.flight_date
+	,s.faa_o AS origin
 	,pa_o.city AS origin_city
 	,pa_o.name AS origin_airport
 	,s.faa_d AS dest
