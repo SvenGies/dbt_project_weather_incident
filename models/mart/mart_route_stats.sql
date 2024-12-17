@@ -24,6 +24,7 @@ SELECT
 	,s.faa_d AS dest
 	,pa_d.city as dest_city
 	,pa_d.name AS dest_airport
+    ,s.flight_number
 	,s.total_flights
 	,s.nunique_tail_nr
 	,s.nunique_airline
